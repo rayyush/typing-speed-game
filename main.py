@@ -18,7 +18,7 @@ def tperror(prompt):
                 else:
                     errors += 1
             else:
-                erros+=1
+                errors+=1
     return errors
 
 #calculate the speed of typing
@@ -49,5 +49,8 @@ if __name__ == '__main__':
     speed = speed(inprompt, stime, etime)
     errors = tperror(prompt)
 
-    print("Total time elapsed: ", time, "seconds")
+    print("#######################")
 
+    print("Total time elapsed: ", time, "seconds")
+    print("Your average typing speed was", speed, "words per minute (w/m)")
+    print("with total errors", errors)
