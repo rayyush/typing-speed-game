@@ -19,4 +19,35 @@ def tperror(prompt):
                     errors += 1
             else:
                 erros+=1
-        return errors
+    return errors
+
+#calculate the speed of typing
+def speed(inprompt, stime, etime):
+    global time
+    global inwords
+
+    inwords = inprompt.split()
+    twords = len(inwords)
+    speed = twords/time
+
+    return speed
+
+def elapsedtime(stime, etime):
+    time = etime - stime
+    return time
+
+if __name__ == '__main__':
+    prompt = "Hi guys! Welcome to typing speed game. This game assesses your typing speed as well as accuracy"
+    print("Type this:- ", prompt)
+    input("Press Enter when you are ready to check your speed!!!")
+
+    stime = time()
+    inprompt = input()
+    etime = time()
+
+    time = round(elapsedtime(stime, etime), 2)
+    speed = speed(inprompt, stime, etime)
+    errors = tperror(prompt)
+
+    print("Total time elapsed: ", time, "seconds")
+
